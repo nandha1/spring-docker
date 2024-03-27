@@ -1,5 +1,4 @@
 FROM openjdk:17
-WORKDIR /appContainer
-COPY ./target/spring-docker.jar /appContainer
+ADD /target/spring-docker.jar /
 EXPOSE 8282
-CMD ["java","-jar","spring-docker.jar"]
+ENTRYPOINT ["java","-jar","/spring-docker.jar"]
