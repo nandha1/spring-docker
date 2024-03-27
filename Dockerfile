@@ -1,4 +1,5 @@
 FROM openjdk:17
-ADD /target/spring-docker.jar /
+# from target jar to docker image
+ADD /target/spring-docker.jar docker-image.jar
 EXPOSE 8282
-ENTRYPOINT ["java","-jar","/spring-docker.jar"]
+ENTRYPOINT ["java","-jar","docker-image.jar"]
